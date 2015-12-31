@@ -4,19 +4,14 @@ import akka.actor.{Props, Actor}
 import akka.event.Logging
 import scala.concurrent.duration._
 
-class LazyActor(sleep:Int) extends Actor {
-  import context._
-  val log = Logging(context.system, this)
+class LazyActor() extends Actor {
 
   var state:Int = 0
 
   def receive = {
-    case msg : String => {
-      log.info(s"message $msg received")
+    case msg : LazyMessage => {
       state+=1
-      Thread.sleep(sleep)
-      sender!s"message $msg processed after $sleep state is $state "
- 
+      sender!s"${msg.context}-${msg.content} processed, state is $state "
     }
   }
 }
