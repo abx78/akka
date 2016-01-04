@@ -1,0 +1,129 @@
+#---------------------------------------------------------------------------------------------------------
+#Ignore thumbnails created by Windows
+Thumbs.db
+
+#Ignore files created by Visual Studio
+*.user
+*.suo
+*.dbmdl
+*.dbproj.schemaview
+*.cache
+*.vsdoc
+[Oo]bj/
+[Oo]bj.Wpf/
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+[Rr][Cc]/
+[Cc]ode[Cc]overage/
+[Ff]x[Cc]op/
+[Ll]og/
+[Tt]emp/
+
+#Ignore devexpress theme temp files
+__temp_file_name_prefix_*.*
+
+#Ignore files created by ReSharper
+_ReSharper*/
+
+#Ignore files created by Typemock
+lint.db
+Metrics.typemock.*
+
+#Ignore files created by NUnit
+TestResult.xml
+*.VisualState.xml
+
+#Ignore NCrunch files
+_NCrunch*
+*.ncrunchsolution
+*.ncrunchsolution.user
+*.ncrunchproject
+
+/src/Nephila.Workbench.Application.Launcher.Pilot/publish
+/src/Nephila.Workbench.Application.Launcher/publish
+/Build/Release_CORP
+
+
+#---------------------------------------------------------------------------------------------------------
+# Created by https://www.gitignore.io
+
+spark-jars/upstream-attribution-*
+
+bin/*.jar
+
+log/
+*.log
+
+### PhpStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+.idea/scopes/
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/modules/
+.idea/.name
+.idea/*.xml
+!.idea/vcs.xml
+!.idea/uiDesigner.xml
+/classes
+/dist
+/out
+/SDK/*SDK
+/target
+/*.bat
+*.class
+out
+build
+.DS_Store
+*~
+target/
+testdata/debugger
+jars/
+
+# if you remove the above rule, at least ignore the following:
+
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
+
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
+
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
