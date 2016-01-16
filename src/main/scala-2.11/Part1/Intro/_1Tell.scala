@@ -1,7 +1,6 @@
 package Part1.Intro
 
 import akka.actor.{Actor, ActorSystem, Props}
-import akka.event.Logging
 
 object _1Tell extends App{
   val system = ActorSystem("demo")
@@ -15,7 +14,6 @@ object _1Tell extends App{
 
 
 class SimpleActor extends Actor {
-  val log = Logging(context.system, this)
 
   def receive = {
     case msg : String =>

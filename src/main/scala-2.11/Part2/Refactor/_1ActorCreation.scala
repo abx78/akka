@@ -6,10 +6,10 @@ import akka.pattern.ask
 import akka.util.Timeout
 import scala.concurrent.duration._
 
-import scala.concurrent.{Await, ExecutionContext}
+import scala.concurrent.{ ExecutionContext}
 import scala.util.Random
 
-
+// creating actors with arguments
 object _1ActorCreation extends App{
 
   val system = ActorSystem("actorCreationSystem")
@@ -37,10 +37,11 @@ object _1ActorCreation extends App{
     implicit val ec:ExecutionContext = context.dispatcher
 
     // problem - when you need to pass argument you would use this syntax
-    // this is a problem when instantiating actors inside actors, because under the hood this enclose "this", so would expose the reference of the outer actor
+    // this is a problem when instantiating actors inside actors, because under the hood this enclose "this",
+    // so would expose the reference of the outer actor
     // this violates the constraint of segregation of actors (share nothing)
 
-    val ansActor = context.actorOf(Props(new AnswerActor(100)), "answerActor")
+    val ansActor = context.actorOf(Props(new WorkerActor(100)), "answerActor")
 
     def receive ={
       case message : SimpleMessage => {
@@ -54,7 +55,7 @@ object _1ActorCreation extends App{
     }
   }
 
-  class AnswerActor(seed:Int) extends Actor {
+  class WorkerActor(seed:Int) extends Actor {
 
     def receive = {
       case msg : SimpleMessage => {
@@ -63,13 +64,13 @@ object _1ActorCreation extends App{
     }
   }
 
-  // SOLUTION 1 - Creating Actors with Props
+  // SOLUTION 1 - Creating Actors with Props, suggested by the Akka team
 
   class ABetterInnerActor() extends Actor {
     implicit val timeout = Timeout(120 seconds)
     implicit val ec:ExecutionContext = context.dispatcher
 
-    val ansActor = context.actorOf(Props(classOf[AnswerActor], 100), "answerActor")
+    val ansActor = context.actorOf(Props(classOf[WorkerActor], 100), "answerActor")
 
     def receive = {
       case message : SimpleMessage => {
@@ -85,15 +86,15 @@ object _1ActorCreation extends App{
 
   // SOLUTION 2 - Companion Object Factory Method
 
-  object AnswerActor {
-    def props(answer:Int): Props = Props(new AnswerActor(answer))
+  object WorkerActor {
+    def props(answer:Int): Props = Props(new WorkerActor(answer))
   }
 
   class AnotherBetterInnerActor() extends Actor {
     implicit val timeout = Timeout(120 seconds)
     implicit val ec: ExecutionContext = context.dispatcher
 
-    val ansActor = context.actorOf(AnswerActor.props(100), "answerActor")
+    val ansActor = context.actorOf(WorkerActor.props(100), "answerActor")
 
     def receive = {
       case message: SimpleMessage => {

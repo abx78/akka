@@ -1,29 +1,29 @@
-[info] Updating {file:/C:/dev/demo_first/project/}demo_first-build...
-[debug] :: resolving dependencies :: default#demo_first-build;0.1-SNAPSHOT
+[info] Updating {file:/E:/dev/personal/akka/project/}akka-build...
+[debug] :: resolving dependencies :: default#akka-build;0.1-SNAPSHOT
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'compile'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
 [debug] resolving dependencies for configuration 'runtime'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [runtime]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [runtime]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
 [debug] resolving dependencies for configuration 'test'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [test]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [runtime]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [test]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [runtime]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
 [debug] resolving dependencies for configuration 'provided'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [provided]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [provided]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@62eda7
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@57a9e244
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4
 [debug] 	found org.scala-lang#scala-library;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-library;2.10.4
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.8 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {provided=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8
@@ -709,17 +709,17 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}
 [debug] resolving dependencies for configuration 'optional'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [optional]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [optional]
 [debug] resolving dependencies for configuration 'compile-internal'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile-internal]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [optional]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [provided]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile-internal]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [optional]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [provided]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->compile]
@@ -1182,22 +1182,22 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}
 [debug] resolving dependencies for configuration 'runtime-internal'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [runtime-internal]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [runtime]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [optional]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [runtime-internal]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [runtime]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [optional]
 [debug] resolving dependencies for configuration 'test-internal'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [test-internal]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [test]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [runtime]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [compile]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [optional]
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [provided]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [test-internal]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [test]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [runtime]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [optional]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [provided]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->compile]
@@ -1660,18 +1660,18 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}
 [debug] resolving dependencies for configuration 'plugin'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [plugin]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [plugin]
 [debug] resolving dependencies for configuration 'sources'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [sources]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [sources]
 [debug] resolving dependencies for configuration 'docs'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [docs]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [docs]
 [debug] resolving dependencies for configuration 'pom'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [pom]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [pom]
 [debug] resolving dependencies for configuration 'scala-tool'
-[debug] == resolving dependencies for default#demo_first-build;0.1-SNAPSHOT [scala-tool]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile]
+[debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [scala-tool]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->default]
@@ -1689,8 +1689,8 @@
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile]
 [debug] == resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#jline;2.10.4 [optional->master(*)]
 [info] Resolving org.scala-lang#jline;2.10.4 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.4 {optional=[compile(*), master(*)]}
@@ -1703,18 +1703,18 @@
 [debug] sbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4
 [debug] 	found org.fusesource.jansi#jansi;1.4 in sbt-chain
 [debug] == resolving dependencies org.scala-lang#jline;2.10.4->org.fusesource.jansi#jansi;1.4 [compile->compile(*)]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master]
-[debug] == resolving dependencies default#demo_first-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master]
+[debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.8!sbt.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#main;0.13.8!main.jar
-[debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.8!compiler-interface-bin.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.8!compiler-interface-src.jar
+[debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.8!compiler-interface-bin.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!compiler-interface-bin.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!compiler-interface-bin.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!compiler-interface-bin.jar
@@ -1766,19 +1766,19 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 937ms :: artifacts dl 32ms
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT compile produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-compile.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT runtime produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-runtime.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT test produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-test.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT provided produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-provided.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT optional produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-optional.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT compile-internal produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-compile-internal.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT runtime-internal produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-runtime-internal.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT test-internal produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-test-internal.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT plugin produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-plugin.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT sources produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-sources.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT docs produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-docs.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT pom produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-pom.xml
-[debug] 	report for default#demo_first-build;0.1-SNAPSHOT scala-tool produced in C:\dev\demo_first\project\target\resolution-cache\reports\default-demo_first-build-scala-tool.xml
-[debug] 	resolve done (937ms resolve - 32ms download)
+[debug] :: resolution report :: resolve 2605ms :: artifacts dl 83ms
+[debug] 	report for default#akka-build;0.1-SNAPSHOT compile produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-compile.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT runtime produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-runtime.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT test produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-test.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT provided produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-provided.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT optional produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-optional.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT compile-internal produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-compile-internal.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT runtime-internal produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-runtime-internal.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT test-internal produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-test-internal.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT plugin produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-plugin.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT sources produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-sources.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT docs produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-docs.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT pom produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-pom.xml
+[debug] 	report for default#akka-build;0.1-SNAPSHOT scala-tool produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-scala-tool.xml
+[debug] 	resolve done (2605ms resolve - 83ms download)
 [info] Done updating.

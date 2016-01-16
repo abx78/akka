@@ -7,12 +7,15 @@ object StreamingWithLogger extends App {
   val actorStream = system.actorOf(Props[LoggedActor], "loggedActor")
 
   val dlListener = system.actorOf(Props[DeadLetterListenerActor], "dlListener")
+
+  // subscribe -> EventBus, takes subscriber + classifier
   system.eventStream.subscribe(dlListener, classOf[DeadLetter])
 
-  actorStream!new SimpleMessage("vamos!")
+  actorStream!new SimpleMessage("a message!")
 
   class LoggedActor extends Actor with ActorLogging {
-    //By default, the Actor that subscribes to these messages is the DefaultLogger which simply prints the message to the standard output
+    // By default, the Actor that subscribes to these messages is the DefaultLogger which
+    // simply prints the message to the standard output
 
     def receive = {
       case message:SimpleMessage=>{

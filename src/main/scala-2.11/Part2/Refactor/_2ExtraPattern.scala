@@ -21,20 +21,23 @@ object _2ExtraPattern_Ask extends App {
 
   orchestrator ! new SimpleMessage("Start")
 
+
   class Orchestrator(worker1:ActorRef, worker2:ActorRef, worker3:ActorRef) extends Actor{
 
     def receive = {
+      case result:Result =>
+        println(result)
       case _=>
 
-        val fut1 = worker1 ? new SimpleMessage("do some work")
-        val fut2 = worker2 ? new SimpleMessage("do more work")
-        val fut3 = worker3 ? new SimpleMessage("do additional work")
+        val fut1 = worker1 ? new DoSomeWork("do some work")
+        val fut2 = worker2 ? new DoMoreWork("more work")
+        val fut3 = worker3 ? new DoEvenMore("do additional work")
 
         val futResult = for{
-          w1 <- fut1.mapTo[String]
-          w2 <- fut2.mapTo[String]
-          w3 <- fut3.mapTo[String]
-        } yield Result(w1, w2, w3)
+          w1 <- fut1.mapTo[MessageBase]
+          w2 <- fut2.mapTo[MessageBase]
+          w3 <- fut3.mapTo[MessageBase]
+        } yield Result(w1.content, w2.content, w3.content)
 
         // why not ask?
         /*
@@ -43,18 +46,17 @@ object _2ExtraPattern_Ask extends App {
         So always prefer tell for performance, and only ask if you must.
 
         In all these methods you have the option of passing along your own ActorRef.
-        Make it a practice of doing so because it will allow the receiver actors to be able to respond to your message, since the sender reference is sent along with the message.
+        Make it a practice of doing so because it will allow the receiver actors to be able to respond to your message,
+        since the sender reference is sent along with the message.
 
         http://doc.akka.io/docs/akka/2.4.1/java/untyped-actors.html#Send_messages
 
         */
 
-        futResult map (myRes=> sender!myRes) // sender might be different from when the future has started!!!
+        futResult map (myRes=>self!myRes) // sender might be different from when the future has started!!!
     }
   }
 }
-
-
 
 // EXTRA PATTERN
 
@@ -74,30 +76,28 @@ object _2ExtraPattern_Extra extends App {
   class Orchestrator(worker1:ActorRef, worker2:ActorRef, worker3:ActorRef) extends Actor{
 
     def receive = {
-      case _ =>
-        val original = sender
+      case result:Result => println("Orchestrator received: " + result)
+      case start:SimpleMessage =>
+        val original = self
         var res1, res2, res3: Option[String] = None
 
         context.actorOf(Props(new Actor {
 
           def receive = {
-            case msg:String =>
-              if(msg == "timeout!"){
-                sendResponse(msg)
-              }
-              else{
-                if(res1 == None) {
-                  res1 = Option(msg)
-                } else{
-                  if(res2 == None) {
-                    res2 = Option(msg)
-                  }else{
-                    if(res3 == None) {
-                      res3 = Option(msg)
-                    }
-                  }
-                }
-              }
+
+            case "timeout!" =>
+              sendResponse("timeout!")
+
+            case msg:DoSomeWork =>
+              res1 = Option(msg.content)
+              checkResults
+
+            case msg:DoMoreWork =>
+              res2 = Option(msg.content)
+              checkResults
+
+            case msg:DoEvenMore =>
+              res3 = Option(msg.content)
               checkResults
           }
 
@@ -109,12 +109,14 @@ object _2ExtraPattern_Extra extends App {
           }
 
           def sendResponse(response:Any) = {
+            println(response)
             original!response
+            context.stop(self)
           }
 
-          worker1!SimpleMessage("go")
-          worker2!SimpleMessage("go")
-          worker3!SimpleMessage("go")
+          worker1!DoSomeWork("go")
+          worker2!DoMoreWork("go")
+          //worker3!DoEvenMore("go")
 
           val timeoutMessenger = context.system.scheduler.scheduleOnce(2 seconds){
             self!"timeout!"
@@ -127,6 +129,7 @@ object _2ExtraPattern_Extra extends App {
 
 class Worker extends Actor {
   def receive = {
-    case msg:SimpleMessage => sender!msg.content
+    case msg:MessageBase =>
+      sender!msg
   }
 }
