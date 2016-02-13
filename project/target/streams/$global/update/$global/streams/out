@@ -16,7 +16,7 @@
 [debug] == resolving dependencies for default#akka-build;0.1-SNAPSHOT [provided]
 [debug] == resolving dependencies default#akka-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@57a9e244
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6d80bd96
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4
 [debug] 	found org.scala-lang#scala-library;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-library;2.10.4
@@ -1766,7 +1766,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 2605ms :: artifacts dl 83ms
+[debug] :: resolution report :: resolve 634ms :: artifacts dl 30ms
 [debug] 	report for default#akka-build;0.1-SNAPSHOT compile produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-compile.xml
 [debug] 	report for default#akka-build;0.1-SNAPSHOT runtime produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-runtime.xml
 [debug] 	report for default#akka-build;0.1-SNAPSHOT test produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-test.xml
@@ -1780,5 +1780,5 @@
 [debug] 	report for default#akka-build;0.1-SNAPSHOT docs produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-docs.xml
 [debug] 	report for default#akka-build;0.1-SNAPSHOT pom produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-pom.xml
 [debug] 	report for default#akka-build;0.1-SNAPSHOT scala-tool produced in E:\dev\personal\akka\project\target\resolution-cache\reports\default-akka-build-scala-tool.xml
-[debug] 	resolve done (2605ms resolve - 83ms download)
+[debug] 	resolve done (634ms resolve - 30ms download)
 [info] Done updating.

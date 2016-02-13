@@ -61,25 +61,23 @@ object ExampleFromDocAkkaIo extends App {
   case class Jazz(artist: String) extends AllKindsOfMusic
   case class Electronic(artist: String) extends AllKindsOfMusic
 
-  new AnyRef {
 
-    class Listener extends Actor {
-      def receive = {
-        case m: Jazz => println(s"${self.path.name} is listening to: ${m.artist}")
-        case m: Electronic => println(s"${self.path.name} is listening to: ${m.artist}")
-      }
+  class Listener extends Actor {
+    def receive = {
+      case m: Jazz => println(s"${self.path.name} is listening to: ${m.artist}")
+      case m: Electronic => println(s"${self.path.name} is listening to: ${m.artist}")
     }
-
-    val jazzListener = system.actorOf(Props(classOf[Listener], this))
-    val musicListener = system.actorOf(Props(classOf[Listener], this))
-    system.eventStream.subscribe(jazzListener, classOf[Jazz])
-    system.eventStream.subscribe(musicListener, classOf[AllKindsOfMusic])
-
-    // only musicListener gets this message, since it listens to *all* kinds of music:
-    system.eventStream.publish(Electronic("Parov Stelar"))
-
-    // jazzListener and musicListener will be notified about Jazz:
-    system.eventStream.publish(Jazz("Sonny Rollins"))
   }
+
+  val jazzListener = system.actorOf(Props(classOf[Listener]), "jazzlistner")
+  val musicListener = system.actorOf(Props(classOf[Listener]), "muscilistner")
+  system.eventStream.subscribe(jazzListener, classOf[Jazz])
+  system.eventStream.subscribe(musicListener, classOf[AllKindsOfMusic])
+
+  // only musicListener gets this message, since it listens to *all* kinds of music:
+  system.eventStream.publish(Electronic("Parov Stelar"))
+
+  // jazzListener and musicListener will be notified about Jazz:
+  system.eventStream.publish(Jazz("Sonny Rollins"))
 }
 

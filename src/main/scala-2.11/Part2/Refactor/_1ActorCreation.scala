@@ -25,6 +25,7 @@ object _1ActorCreation extends App{
 
     val innerActor = context.actorOf(Props(new InnerActor), "innerActor")
 
+
     def receive = {
       case msg: SimpleMessage =>{
         innerActor ! msg

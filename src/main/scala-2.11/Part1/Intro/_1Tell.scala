@@ -9,7 +9,7 @@ object _1Tell extends App{
   actorTell ! "Tell OK"
 
   println("Tell example executed successfully")
-  system.terminate()
+  //system.terminate()
 }
 
 

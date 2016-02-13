@@ -15,23 +15,21 @@ object _2ExtraPattern_Ask extends App {
   implicit val ec:ExecutionContext = system.dispatcher
 
   val worker1 = system.actorOf(Props[Worker], "firstWorker")
-  val worker2 = system.actorOf(Props[Worker], "secondWorker")
-  val worker3 = system.actorOf(Props[Worker], "thirdWorker")
-  val orchestrator = system.actorOf(Props(classOf[Orchestrator], worker1, worker2, worker3), "OrchestratorActor")
+  val orchestrator = system.actorOf(Props(classOf[Orchestrator], worker1), "OrchestratorActor")
 
   orchestrator ! new SimpleMessage("Start")
 
 
-  class Orchestrator(worker1:ActorRef, worker2:ActorRef, worker3:ActorRef) extends Actor{
+  class Orchestrator(worker:ActorRef) extends Actor{
 
     def receive = {
       case result:Result =>
         println(result)
       case _=>
 
-        val fut1 = worker1 ? new DoSomeWork("do some work")
-        val fut2 = worker2 ? new DoMoreWork("more work")
-        val fut3 = worker3 ? new DoEvenMore("do additional work")
+        val fut1 = worker ? new DoSomeWork("do some work")
+        val fut2 = worker ? new DoMoreWork("more work")
+        val fut3 = worker ? new DoEvenMore("do additional work")
 
         val futResult = for{
           w1 <- fut1.mapTo[MessageBase]
@@ -67,13 +65,11 @@ object _2ExtraPattern_Extra extends App {
   implicit val ec:ExecutionContext = system.dispatcher
 
   val worker1 = system.actorOf(Props[Worker], "firstWorker")
-  val worker2 = system.actorOf(Props[Worker], "secondWorker")
-  val worker3 = system.actorOf(Props[Worker], "thirdWorker")
-  val orchestrator = system.actorOf(Props(classOf[Orchestrator], worker1, worker2, worker3), "OrchestratorActor")
+  val orchestrator = system.actorOf(Props(classOf[Orchestrator], worker1), "OrchestratorActor")
 
   orchestrator ! new SimpleMessage("Start")
 
-  class Orchestrator(worker1:ActorRef, worker2:ActorRef, worker3:ActorRef) extends Actor{
+  class Orchestrator(worker:ActorRef) extends Actor{
 
     def receive = {
       case result:Result => println("Orchestrator received: " + result)
@@ -82,6 +78,14 @@ object _2ExtraPattern_Extra extends App {
         var res1, res2, res3: Option[String] = None
 
         context.actorOf(Props(new Actor {
+
+          worker!DoSomeWork("go")
+          worker!DoMoreWork("go")
+          worker!DoEvenMore("go")
+
+          val timeoutMessenger = context.system.scheduler.scheduleOnce(2 seconds){
+            self!"timeout!"
+          }
 
           def receive = {
 
@@ -101,27 +105,19 @@ object _2ExtraPattern_Extra extends App {
               checkResults
           }
 
-          def checkResults = (res1, res2, res3) match {
-            case (Some(r1),Some(r2), Some(r3)) => {
-              sendResponse(Result(res1.get, res2.get, res3.get))
-            }
-            case _ =>
+        def checkResults = (res1, res2, res3) match {
+          case (Some(r1),Some(r2), Some(r3)) => {
+            sendResponse(Result(res1.get, res2.get, res3.get))
           }
-
-          def sendResponse(response:Any) = {
-            println(response)
-            original!response
-            context.stop(self)
-          }
-
-          worker1!DoSomeWork("go")
-          worker2!DoMoreWork("go")
-          //worker3!DoEvenMore("go")
-
-          val timeoutMessenger = context.system.scheduler.scheduleOnce(2 seconds){
-            self!"timeout!"
-          }
+          case _ =>
         }
+
+        def sendResponse(response:Any) = {
+          println(response)
+          original!response
+          context.stop(self)
+        }
+    }
         ))
     }
   }
